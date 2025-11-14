@@ -1,0 +1,714 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: linear-gradient(180deg, rgba(26, 16, 20, 0.95) 0%, rgba(45, 36, 31, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(251, 191, 36, 0.4);
+  position: relative;
+}
+
+.app-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+}
+
+.app-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+  letter-spacing: 1px;
+}
+
+.app-header p {
+  color: #fbbf24;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-family: 'Inter', sans-serif;
+  opacity: 0.95;
+}
+
+.app-header-subheader {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  font-style: normal;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: flex-start;
+  position: relative;
+  justify-content: center;
+}
+
+.filters-sidebar {
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  flex-shrink: 0;
+  width: 220px;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.app-content {
+  flex: 1;
+  min-width: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-left: calc(50% - 700px);
+  margin-right: calc(50% - 700px);
+  width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-content > * {
+  text-align: center;
+  width: 100%;
+}
+
+.app-content .stats-table-container,
+.app-content .stats-table,
+.app-content .stats-table th,
+.app-content .stats-table td {
+  text-align: left;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fbbf24;
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.no-data-message {
+  background: linear-gradient(135deg, rgba(45, 36, 31, 0.95) 0%, rgba(26, 16, 20, 0.95) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(251, 191, 36, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.no-data-message p {
+  color: #fbbf24;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+/* Overview Section - Compact */
+.overview-section-compact {
+  margin-bottom: 2rem;
+}
+
+.overview-stats-compact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Titan Stats Section */
+.titan-stats-section {
+  background: linear-gradient(135deg, rgba(45, 36, 31, 0.95) 0%, rgba(26, 16, 20, 0.95) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(251, 191, 36, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.titan-stats-section h2 {
+  font-family: 'Playfair Display', serif;
+  color: #fbbf24;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
+
+.stats-grid-container {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(26, 16, 20, 0.8);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  border-radius: 8px;
+  box-shadow: 
+    inset 0 2px 8px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(251, 191, 36, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.stats-grid-container h3 {
+  font-family: 'Playfair Display', serif;
+  color: #fbbf24;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
+
+.stats-note {
+  font-family: 'Inter', sans-serif;
+  color: #c9a961;
+  font-size: 0.85rem;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1400px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.round-frequency-card,
+.round-winrate-card {
+  background: rgba(26, 16, 20, 0.8);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  min-width: 0;
+}
+
+.round-frequency-card:hover,
+.round-winrate-card:hover {
+  border-color: rgba(251, 191, 36, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.round-frequency-title,
+.round-winrate-title {
+  font-family: 'Inter', sans-serif;
+  color: #fbbf24;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.round-frequency-title-link,
+.round-winrate-title-link {
+  text-decoration: none;
+  color: #fbbf24;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: block;
+}
+
+.round-frequency-title-link:hover,
+.round-winrate-title-link:hover {
+  color: #f59e0b;
+  text-decoration: underline;
+}
+
+.titan-table-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.titan-table-link:hover {
+  color: #fbbf24;
+  text-decoration: underline;
+}
+
+.round-frequency-stats,
+.round-winrate-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.round-frequency-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(251, 191, 36, 0.1);
+}
+
+.round-frequency-item:last-of-type {
+  border-bottom: none;
+}
+
+.round-frequency-label {
+  font-family: 'Inter', sans-serif;
+  color: #c9a961;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.round-frequency-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.round-frequency-total {
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(251, 191, 36, 0.2);
+  font-family: 'Inter', sans-serif;
+  color: #fbbf24;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.round-winrate-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(251, 191, 36, 0.1);
+}
+
+.round-winrate-item:last-child {
+  border-bottom: none;
+}
+
+.round-winrate-label {
+  font-family: 'Inter', sans-serif;
+  color: #c9a961;
+  font-size: 0.9rem;
+}
+
+.round-winrate-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.round-winrate-count {
+  font-family: 'Inter', sans-serif;
+  color: #c9a961;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+}
+
+/* Stats Table */
+.stats-table-container {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.stats-table-container h3 {
+  font-family: 'Playfair Display', serif;
+  color: #fbbf24;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
+
+.stats-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(26, 16, 20, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+.stats-table thead {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.25) 0%, rgba(245, 158, 11, 0.2) 100%);
+  border-bottom: 2px solid rgba(251, 191, 36, 0.4);
+}
+
+.stats-table th {
+  padding: 1.25rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fbbf24;
+  font-family: 'Inter', sans-serif;
+  border-right: 1px solid rgba(251, 191, 36, 0.15);
+}
+
+.stats-table th:last-child {
+  border-right: none;
+}
+
+.stats-table td {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  color: #e8e0d6;
+  border-right: 1px solid rgba(212, 175, 55, 0.05);
+}
+
+.stats-table td:last-child {
+  border-right: none;
+}
+
+.stats-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.stats-table tbody tr:hover {
+  background: rgba(251, 191, 36, 0.15);
+}
+
+.stats-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.stats-table tbody tr td:first-child {
+  font-weight: 600;
+  color: #fbbf24;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Footer */
+.app-footer {
+  background: linear-gradient(180deg, rgba(26, 16, 20, 0.95) 0%, rgba(45, 36, 31, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: #fbbf24;
+  margin-top: 3rem;
+  border-top: 2px solid rgba(251, 191, 36, 0.4);
+}
+
+.app-footer p {
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+}
+
+.app-footer a {
+  color: #fbbf24;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.app-footer a:hover {
+  color: #f59e0b;
+  text-decoration: underline;
+}
+
+/* Chart styling overrides */
+.recharts-wrapper {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: #fbbf24 !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.recharts-cartesian-axis-line {
+  stroke: rgba(251, 191, 36, 0.3) !important;
+  stroke-width: 1.5px !important;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(251, 191, 36, 0.15) !important;
+  stroke-dasharray: 3 3;
+}
+
+.recharts-legend-item-text {
+  color: #fbbf24 !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.recharts-legend-item {
+  margin-right: 20px !important;
+}
+
+.recharts-tooltip-wrapper {
+  background: rgba(26, 16, 20, 0.98) !important;
+  border: 1px solid rgba(251, 191, 36, 0.5) !important;
+  border-radius: 8px !important;
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(251, 191, 36, 0.2) !important;
+  padding: 8px 12px !important;
+}
+
+.recharts-tooltip-label {
+  color: #fbbf24 !important;
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  margin-bottom: 8px !important;
+  padding-bottom: 6px !important;
+  border-bottom: 1px solid rgba(251, 191, 36, 0.3) !important;
+}
+
+.recharts-tooltip-item-name,
+.recharts-tooltip-item-value {
+  color: #e8e0d6 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+}
+
+.recharts-bar-rectangle {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.recharts-bar-rectangle:hover {
+  opacity: 0.9;
+  filter: drop-shadow(0 4px 8px rgba(251, 191, 36, 0.4));
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .app-content {
+    width: calc(100% - 280px);
+    max-width: none;
+    margin-left: 280px;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .app-content {
+    width: calc(100% - 260px);
+    margin-left: 260px;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.75rem;
+    letter-spacing: 0.5px;
+  }
+
+  .app-header p {
+    font-size: 1rem;
+  }
+
+  .app-header-subheader {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .app-main {
+    padding: 1rem 0.75rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .filters-sidebar {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-height: none;
+    margin-bottom: 1.5rem;
+    order: -1;
+  }
+
+  .app-content {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+
+  .overview-section-compact,
+  .titan-stats-section {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .titan-stats-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .overview-stats-compact {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stats-grid-container {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stats-grid-container h3 {
+    font-size: 1.25rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .round-frequency-card,
+  .round-winrate-card {
+    padding: 0.875rem;
+  }
+
+  .round-frequency-title,
+  .round-winrate-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .round-frequency-value,
+  .round-winrate-value {
+    font-size: 1.25rem;
+  }
+
+  .stats-table-container {
+    margin-top: 1.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .stats-table-container h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .stats-table {
+    font-size: 0.8rem;
+    min-width: 600px;
+  }
+
+  .stats-table th,
+  .stats-table td {
+    padding: 0.625rem 0.5rem;
+  }
+
+  .stats-table th {
+    font-size: 0.75rem;
+  }
+
+  .stats-note {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .app-header p {
+    font-size: 0.9rem;
+  }
+
+  .app-header-subheader {
+    font-size: 0.85rem;
+  }
+
+  .app-main {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .overview-section-compact,
+  .titan-stats-section {
+    padding: 1rem;
+  }
+
+  .titan-stats-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .stats-grid-container {
+    padding: 0.75rem;
+  }
+
+  .stats-grid-container h3 {
+    font-size: 1.1rem;
+  }
+
+  .round-frequency-card,
+  .round-winrate-card {
+    padding: 0.75rem;
+  }
+
+  .stats-table {
+    font-size: 0.75rem;
+    min-width: 500px;
+  }
+
+  .stats-table th,
+  .stats-table td {
+    padding: 0.5rem 0.375rem;
+  }
+
+  .stats-table th {
+    font-size: 0.7rem;
+  }
+}

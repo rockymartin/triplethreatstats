@@ -1,0 +1,37 @@
+season,episode_number,contestant,judge,r1_ingredients,r1_titan,r1_outcome,r1_contestant_score,r1_titan_score,r2_ingredients,r2_titan,r2_outcome,r2_contestant_score,r2_titan_score,r3_ingredients,r3_titan,r3_outcome,r3_contestant_score,r3_titan_score,final_outcome,final_contestant_score,final_titan_score
+1,1,Jonathon Sawyer,Nancy Silverton,oysters & horseradish,Tiffany Derry,L,6,8,filet mignon & blue cheese,Michael Voltaggio,L,5,7,black truffles & eggs,Brooke Williamson,T,15,15,L,26,30
+1,2,Kevin Tien,Chris Scott,prawns & soy sauce,Michael Voltaggio,W,9,7,sweet potatoes & molasses,Brooke Williamson,L,6,9,condensed milk & lime leaves,Tiffany Derry,L,13,18,L,28,34
+1,3,Claudette Zepeda,Marc Forgione,pineapple & chipotle,Tiffany Derry,T,6,6,duck & oranges,Michael Voltaggio,W,9,8,huitlacoche & masa,Brooke Williamson,W,18,16,W,33,30
+1,4,Adriana Urbina,Michelle Bernstein,red snapper & mangoes,Michael Voltaggio,T,7,7,scallops & avocado,Brooke Williamson,L,5,8,dry purple corn & heart of palm,Tiffany Derry,L,15,17,L,27,32
+1,5,Viet Pham,Frank Prisinzano,pork tenderloin & apple,Michael Voltaggio,L,5,9,potato & chives,Brooke Williamson,W,8,5,chicken thighs & red cabbage,Tiffany Derry,W,18,10,W,31,24
+1,6,Brittanny Anderson,Michael Psilakis,chicken & paprika,Tiffany Derry,W,8,7,zucchini & parmigiano reggiano,Michael Voltaggio,W,10,7,hen-of-the-woods mushrooms & green peppercorns,Brooke Williamson,W,18,17,W,36,31
+2,1,Michael Symon,Naomi Pomeroy,pistachios & honey,Michael Voltaggio,L,7,8,black garlic & tofu,Tiffany Derry,L,5,6,lamb hearts & greek yogurt,Brooke Williamson,W,18,17,L,30,31
+2,2,Esther Choi,Francis Lam,flanken cut short ribs & Asian pear,Tiffany Derry,W,7,6,serrano chiles & avocado,Michael Voltaggio,L,7,9,pork belly & kimchi,Brooke Williamson,W,17,15,W,31,30
+2,3,Scott Conant,Jonathan Waxman,tomato & eggs,Brooke Williamson,L,7,8,lobster & butter,Michael Voltaggio,W,7,6,baby goat shoulder & estratto di pomodoro,Tiffany Derry,W,17,15,W,31,29
+2,4,Jose Garces,Aliya LeeKong,plantains & shrimp,Michael Voltaggio,L,6,7,guanciale & pecorino,Tiffany Derry,T,7,7,pigs' feet & achiote,Brooke Williamson,L,18,19,L,31,33
+2,5,Mei Lin,Stephanie Izard,pork tenderloin & blood orange,Michael Voltaggio,W,6,5,cherry tomatoes & saffron,Brooke Williamson,L,7,9,rack of lamb & celery,Tiffany Derry,W,19,16,W,32,30
+2,6,Kelvin Fernandez,Adrienne Cheatham,black beans & chicken,Michael Voltaggio,L,6,7,hot Italian sausage & red bell peppers,Brooke Williamson,L,7,8,corn & mushrooms,Tiffany Derry,T,18,18,L,31,33
+2,7,Byron Gomez,Ayesha Nurdjaja,skirt steak & sichuan peppercorns,Tiffany Derry,W,7,6,peanuts & ancho chiles,Michael Voltaggio,W,9,8,red snapper & yucca,Brooke Williamson,L,16,19,L,32,33
+2,8,Kelsey Barnard Clark,Michael Lomonaco,blue crab & okra,Michael Voltaggio,L,6,7,quail eggs & bacon,Brooke Williamson,T,8,8,catfish & lima beans,Tiffany Derry,W,19,17,W,33,32
+2,9,Shota Nakajima,Gavin Kaysen,salmon & red miso,Michael Voltaggio,L,6,8,hanger steak & cheddar cheese,Tiffany Derry,W,6,5,black cod & burdock root,Brooke Williamson,W,16,13,W,28,26
+2,10,Rashida Holmes,Cliff Crooks,goat meat & scotch bonnet,Brooke Williamson,L,5,7,mussels & fennel,Tiffany Derry,L,6,9,conch & young coconut,Michael Voltaggio,L,12,20,L,23,36
+3,1,Marcus Samuelsson,Ken Oringer,salmon & lime,Brooke Williamson,W,8,6,brioche & blackberries,Michael Voltaggio,T,7,7,hen duck & geoduck,Tiffany Derry,T,19,19,W,34,32
+3,2,Shirley Chung,Geoffrey Zakarian,king crab & mustard,Michael Voltaggio,W,8,7,ground beef & shallots,Tiffany Derry,W,8,7,pork belly & doubanjiang,Brooke Williamson,W,17,15,W,33,29
+3,3,Silvia Barban,Andrew Zimmern,duck breast & pomegranate,Tiffany Derry,L,7,8,Arborio rice & gorgonzola,Michael Voltaggio,W,9,7,sweetbread & colatura,Brooke Williamson,W,18,16,W,34,31
+3,4,Kevin Lee,Lucinda Scala Quinn,scallops & ginger,Tiffany Derry,W,8,5,beef tenderloin & cognac,Michael Voltaggio,W,9,6,sweet potatoes & kimchi,Brooke Williamson,L,11,18,L,28,29
+3,5,Eric Adjepong,Chris Cheung,rack of lamb & mint,Michael Voltaggio,T,7,7,mussels & fresno chilies,Tiffany Derry,L,6,9,goat leg & tamarind,Brooke Williamson,L,16,18,L,29,34
+3,6,Ayaka Guido,Frank Prisinzano,chorizo & clams,Michael Voltaggio,W,8,4,rib eye steak & jalapeño,Brooke Williamson,L,6,10,savoy cabbage & Lapsang tea,Tiffany Derry,W,14,13,W,28,27
+3,7,Kaleena Bliss,Hillary Sterling,ahi tuna & capers,Tiffany Derry,T,6,6,New York strip steak & eggs,Brooke Williamson,L,5,7,pork collar & Japanese eggplant,Michael Voltaggio,L,14,16,L,25,29
+3,8,Katsuji Tanabe,Judy Joo,Dungeness crab & tomatillo,Michael Voltaggio,T,7,7,chicken & green olives,Tiffany Derry,L,8,9,beef tongue & shiso,Brooke Williamson,W,19,17,W,34,33
+3,9,Ashleigh Shanti,Wylie Dufresne,slab bacon & frisée,Michael Voltaggio,W,8,7,skirt steak & piquillo peppers,Tiffany Derry,L,6,9,chanterelles & chicken liver,Brooke Williamson,W,17,16,L,31,32
+3,10,Michael Jenkins,Amanda Freitag,lobster & Calabrian chilies,Tiffany Derry,L,6,8,gruyère & potatoes,Brooke Williamson,T,7,7,artichokes & pistachios,Michael Voltaggio,L,17,18,L,30,33
+4,1,Nini Nguyen,Daniel Boulud,crayfish & beef tenderloin,Brooke Williamson,L,6,8,black kale & wild mushrooms,Michael Voltaggio,L,8,9,pork shoulder & rice flour,Ayesha Nurdjaja,W,16,15,L,30,32
+4,2,Bryan Voltaggio,Michael Solomonov,pork tenderloin & bourbon,Brooke Williamson,L,7,9,eggs & bucheron,Ayesha Nurdjaja,L,6,10,Maryland blue crab & pawpaw vinegar,Michael Voltaggio,W,20,19,L,33,38
+4,3,Jet Tila,Lorena Garcia,Duck & habanero chilies,Michael Voltaggio,T,7,7,eggplant & manchego cheese,Brooke Williamson,W,7,6,trout & Morning glory,Ayesha Nurdjaja,W,19,15,W,33,28
+4,4,Dale Talde,Giada De Laurentiis,pork ribs & molasses,Michael Voltaggio,W,7,6,piquillo peppers & goat cheese,Brooke Williamson,W,10,9,dungeness crab & sushi rice,Ayesha Nurdjaja,L,10,19,L,27,34
+4,5,Maneet Chauhan,Charlie Mitchell,lamb loin & mangos,Brooke Williamson,T,6,6,yellowfin tuna & avocado,Ayesha Nurdjaja,W,6,5,flattened rice & Fox nuts,Michael Voltaggio,L,12,17,L,24,28
+4,6,Martel Stone,Lorna Maseko,sweet potatoes & limes,Michael Voltaggio,T,7,7,lobster & Ossetra Caviar,Ayesha Nurdjaja,L,7,8,Suya spice & gooseberries,Brooke Williamson,W,18,16,W,32,31
+4,7,Avishar Barua,Leah Cohen,Yellowtail & pineapple,Michael Voltaggio,L,5,8,Yukon Gold potatoes & Parmigiano-Reggiano cheese,Ayesha Nurdjaja,L,5,9,Besan (chickpea flour) & baby spinach,Brooke Williamson,T,17,17,L,27,34
+4,8,Adrianne Calvo,Rick Bayless,Octopus & sour orange,Michael Voltaggio,L,5,7,Slab bacon & honey,Ayesha Nurdjaja,L,7,9,New Zealand rack of Lamb & guava,Brooke Williamson,L,12,16,L,24,32
+4,9,Michelle Wallace,Katie Lee,Whole chicken & peanuts,Brooke Williamson,L,7,8,Heirloom carrots & Greek yogurt,Michael Voltaggio,W,9,6,Mussels & nduja,Ayesha Nurdjaja,W,19,18,W,35,32
+4,10,Karen Akunowicz,Scott Conant,Sea Scallops & blood orange,Michael Voltaggio,W,9,7,Porterhouse steak & gochujang,Brooke Williamson,L,7,9,Monkfish & prosciutto,Ayesha Nurdjaja,L,15,19,L,31,35

@@ -1,0 +1,25 @@
+{
+  "name": "triplethreatstats",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A fan website and data analysis project for Bobby's Triple Threat",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "convert-data": "python3 convert_csv_to_json.py",
+    "prepare-data": "python3 scrape_wikipedia.py && python3 convert_csv_to_json.py"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.9.6",
+    "recharts": "^2.10.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8"
+  }
+}

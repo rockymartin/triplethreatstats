@@ -1,0 +1,140 @@
+.stat-card-number {
+  background: rgba(26, 16, 20, 0.8);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.stat-card-number:hover {
+  border-color: rgba(251, 191, 36, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card-number-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #c9a961;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.stat-card-link {
+  color: #fbbf24;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.stat-card-link:hover {
+  color: #f59e0b;
+  text-decoration: underline;
+}
+
+.stat-card-number-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  line-height: 1.2;
+}
+
+.stat-card-number-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+/* Color variants */
+.stat-card-number-gold .stat-card-number-value {
+  color: #fbbf24;
+  text-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
+
+.stat-card-number-blue .stat-card-number-value {
+  color: #1e40af;
+  text-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
+}
+
+.stat-card-number-emerald .stat-card-number-value {
+  color: #059669;
+  text-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+}
+
+.stat-card-number-red .stat-card-number-value {
+  color: #b91c1c;
+  text-shadow: 0 2px 8px rgba(185, 28, 28, 0.3);
+}
+
+.stat-card-number-neutral .stat-card-number-value {
+  color: #e8e0d6;
+}
+
+.stat-card-number-gold .stat-card-number-subtitle {
+  color: #fbbf24;
+}
+
+.stat-card-number-blue .stat-card-number-subtitle {
+  color: #1e40af;
+}
+
+.stat-card-number-emerald .stat-card-number-subtitle {
+  color: #059669;
+}
+
+.stat-card-number-red .stat-card-number-subtitle {
+  color: #b91c1c;
+}
+
+.stat-card-number-neutral .stat-card-number-subtitle {
+  color: #c9a961;
+}
+
+.stat-card-highlight {
+  border-color: rgba(251, 191, 36, 0.5);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+}
+
+@media (max-width: 768px) {
+  .stat-card-number {
+    padding: 1rem;
+    min-width: 100px;
+  }
+
+  .stat-card-number-label {
+    font-size: 0.8rem;
+  }
+
+  .stat-card-number-value {
+    font-size: 1.75rem;
+  }
+
+  .stat-card-number-subtitle {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-card-number {
+    padding: 0.875rem;
+  }
+
+  .stat-card-number-label {
+    font-size: 0.75rem;
+  }
+
+  .stat-card-number-value {
+    font-size: 1.5rem;
+  }
+
+  .stat-card-number-subtitle {
+    font-size: 0.8rem;
+  }
+}
+
