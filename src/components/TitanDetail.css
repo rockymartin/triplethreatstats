@@ -3,6 +3,81 @@
   margin: 0 auto;
   padding: 2rem;
   color: #e5e7eb;
+  text-align: left;
+}
+
+.titan-detail-container--error {
+  padding: 2rem 1.5rem 3rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titan-detail-sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 14;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 1rem;
+  padding: 0.55rem 1rem;
+  background: rgba(26, 16, 20, 0.94);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(251, 191, 36, 0.28);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  text-align: left;
+}
+
+.titan-detail-sticky-nav--static {
+  position: relative;
+  top: auto;
+}
+
+.titan-breadcrumbs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.65rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+}
+
+.titan-breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  color: #dcc48a;
+}
+
+.titan-breadcrumbs li:not(:last-child)::after {
+  content: '/';
+  margin-left: 0.65rem;
+  color: rgba(251, 191, 36, 0.45);
+  font-weight: 400;
+}
+
+.titan-breadcrumbs a {
+  color: #fcd34d;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.titan-breadcrumbs a:hover {
+  text-decoration: underline;
+  color: #fde68a;
+}
+
+.titan-breadcrumbs li[aria-current='page'] {
+  color: #f5f0e6;
+  font-weight: 600;
+}
+
+.app-content > .titan-detail-sticky-nav,
+.app-content > .titan-detail-container {
+  text-align: left;
 }
 
 .titan-detail-header {
@@ -100,7 +175,7 @@
 }
 
 .metric-label {
-  color: #9ca3af;
+  color: #c4b59a;
   font-size: 0.9rem;
 }
 
@@ -221,12 +296,6 @@
 .strong-competitor-badge.strong-competitor-no {
   background: rgba(156, 163, 175, 0.2);
   color: #d1d5db;
-}
-
-.margin-indicator {
-  color: #9ca3af;
-  font-size: 0.85rem;
-  margin-left: 0.25rem;
 }
 
 .wikipedia-link {

@@ -30,21 +30,9 @@ Episode data is sourced from the Wikipedia page: https://en.wikipedia.org/wiki/B
 
 ## Project Structure
 
-- `src/` - React application source code
-  - `components/` - React components (Overview, TitanStats, TitanDetail, Filters, StatCard)
-  - `utils/` - Utility functions for calculating statistics and classifying contestants
-  - `data/` - JSON data files (episodes and contestant lists)
-- `scripts/` - Python scripts for data management
-  - `scrape_wikipedia.py` - Scrape and convert Wikipedia episode tables to CSV
-  - `scrape_all_top_chef.py` - Scrape Top Chef contestant list
-  - `scrape_all_iron_chef.py` - Scrape Iron Chef America contestant list
-  - `scrape_tournament_of_champions.py` - Scrape Tournament of Champions contestant list
-  - `scrape_beat_bobby_flay.py` - Scrape Beat Bobby Flay contestant list
-  - `verify_contestants.py` - Verify contestant classifications
-- `episodes.csv` - Structured CSV file containing all episode data
-- `Dockerfile` - Docker configuration for Cloud Run deployment
-- `convert_csv_to_json.py` - Convert CSV to JSON format
-- `validate_data.py` - Script to validate CSV data integrity
+- `src/` — React app (`components/`, `utils/`, bundled `data/*.json`)
+- `scripts/` — `serve-production.mjs` (Cloud Run static server) and Python scrapers / `verify_contestants.py`
+- Root — `scrape_wikipedia.py`, `convert_csv_to_json.py`, `validate_data.py`, `episodes.csv`, `index.html`, `vite.config.js`
 
 ## Setup
 
@@ -93,7 +81,18 @@ npm run build
 
 The built files will be in the `dist/` directory.
 
+### Run production build locally (same as Cloud Run)
+
+```bash
+npm run build
+npm start
+```
+
+Then open http://localhost:8080 — `PORT` can be overridden (Cloud Run sets it automatically).
+
 ## Deployment to Google Cloud Run
+
+Cloud Run deploys from source using **Google Cloud Buildpacks** (no Dockerfile): it installs dependencies, runs `npm run build`, then starts the service with `npm start` (see `scripts/serve-production.mjs`).
 
 ### Prerequisites
 
@@ -130,6 +129,39 @@ gcloud run deploy triplethreatstats \
 
 The app will be available at the URL provided after deployment completes.
 
+### Custom domain (triplethreatstats.com) and Namecheap
+
+Use **Google Cloud Run domain mapping** so your domain is served with a managed certificate (avoid Namecheap “URL Redirect” alone—it does not host the SPA correctly).
+
+1. **Cloud Run → custom domain**
+   - Open [Cloud Run](https://console.cloud.google.com/run) → service **triplethreatstats** → tab **Manage custom domains** (or **Domain mappings**).
+   - **Add mapping** for `triplethreatstats.com` and, if you want it, `www.triplethreatstats.com`. The app redirects `www` → apex (see `scripts/serve-production.mjs`).
+
+2. **Copy DNS records from Google**
+      After you start verification, Cloud Run shows the records to create (often **A / AAAA** for the root domain and sometimes **CNAME** for `www`). Keep them exactly as shown until the certificate shows **Active**.
+
+3. **Namecheap → Advanced DNS**
+   - Turn off **Namecheap BasicDNS / parking / URL redirect** for this domain if it conflicts.
+   - Under **Host Records**, add the records Google gave you (e.g. **A Record** `@` → Google IPs, **CNAME** `www` → `ghs.googlehosted.com` or whatever the console lists—**use Google’s values**, not these examples if they differ).
+   - For **DNS verification**, add any **TXT** record Google requests.
+
+4. **Wait for propagation + certificate**
+   - Propagation can take from a few minutes to 48 hours. In Cloud Run, wait until the domain mapping is **Ready** and the cert is issued.
+
+5. **Redeploy after server or app changes**
+
+   ```bash
+   gcloud run deploy triplethreatstats \
+     --source . \
+     --platform managed \
+     --region us-central1 \
+     --project triple-threat-stats \
+     --allow-unauthenticated \
+     --port 8080
+   ```
+
+The default `*.run.app` URL will keep working; you can tell visitors to use **https://triplethreatstats.com** as the canonical site.
+
 ## CSV Structure
 
 The CSV file contains one row per episode with the following columns:
@@ -163,9 +195,7 @@ The web application provides:
 - **React 18** - UI framework
 - **Vite** - Build tool and dev server
 - **React Router** - Client-side routing
-- **Google Cloud Run** - Hosting platform
-- **Docker** - Containerization
-- **Nginx** - Web server for production
+- **Google Cloud Run** - Hosting (Node.js buildpack: `vite build` + static server)
 - **Python** - Data scraping and processing
 
 ## License

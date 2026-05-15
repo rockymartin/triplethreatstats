@@ -80,7 +80,10 @@ function Filters({ episodes, onFilterChange }) {
               checked={allSeasonsSelected}
               onChange={toggleAllSeasons}
             />
-            <span>All Seasons</span>
+            <span className="filter-checkbox-text">
+              <span className="filter-label-desktop">All Seasons</span>
+              <span className="filter-label-mobile">All</span>
+            </span>
           </label>
           {seasons.map(season => (
             <label key={season} className="filter-checkbox">
@@ -89,7 +92,10 @@ function Filters({ episodes, onFilterChange }) {
                 checked={allSeasonsSelected || selectedSeasons.has(season)}
                 onChange={() => toggleSeason(season)}
               />
-              <span>Season {season}</span>
+              <span className="filter-checkbox-text">
+                <span className="filter-label-desktop">Season {season}</span>
+                <span className="filter-label-mobile">S{season}</span>
+              </span>
             </label>
           ))}
         </div>
