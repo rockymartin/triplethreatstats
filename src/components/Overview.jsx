@@ -19,7 +19,7 @@ function Overview({ episodes }) {
   }, [episodes])
 
   return (
-    <section className="overview-section-compact">
+    <section className="overview-section-compact" id="overview">
       <div className="overview-stats-compact">
         <StatCard
           title="Total Episodes"
@@ -37,6 +37,11 @@ function Overview({ episodes }) {
           value={overview.titanWins}
           subtitle={`${overview.titanWinRate}%`}
           color="gold"
+        />
+        <StatCard
+          title="Ties"
+          value={overview.ties}
+          color="neutral"
         />
       </div>
     </section>

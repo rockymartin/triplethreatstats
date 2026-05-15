@@ -6,6 +6,7 @@ import { getWikipediaUrl } from '../utils/wikipedia'
 import { hasOtherAppearances, getOtherAppearancesLabel } from '../utils/contestantClassification'
 import Filters from './Filters'
 import StatCard from './StatCard'
+import { getDataCoverageLabel } from '../utils/dataCoverage'
 import './TitanDetail.css'
 
 function capitalizeIngredients(ingredients) {
@@ -56,20 +57,9 @@ function TitanDetail({ episodes, filters, handleFilterChange }) {
     const freq = getRoundFrequency(titanEpisodes)
     return freq[decodedTitanName] || { round1: 0, round2: 0, round3: 0, total: 0 }
   }, [titanEpisodes, decodedTitanName])
-  
-  if (!titanStats) {
-    return (
-      <div className="app">
-        <div className="titan-detail-container">
-          <div className="titan-detail-error">
-            <h2>Titan not found</h2>
-            <Link to="/">← Back to Overview</Link>
-          </div>
-        </div>
-      </div>
-    )
-  }
-  
+
+  const coverageLabel = getDataCoverageLabel(episodes)
+
   if (filteredEpisodes.length === 0) {
     return (
       <div className="app">
@@ -84,11 +74,46 @@ function TitanDetail({ episodes, filters, handleFilterChange }) {
             <Filters episodes={episodes} onFilterChange={handleFilterChange} />
           </aside>
           <div className="app-content">
+            <nav className="titan-detail-sticky-nav" aria-label="Breadcrumb">
+              <ol className="titan-breadcrumbs">
+                <li><Link to="/">Overview</Link></li>
+                <li aria-current="page">{decodedTitanName}</li>
+              </ol>
+            </nav>
             <div className="no-data-message">
               <p>Please select at least one season to view statistics.</p>
             </div>
           </div>
         </main>
+
+        <footer className="app-footer">
+          <p>Data sourced from <a href="https://en.wikipedia.org/wiki/Bobby's_Triple_Threat" target="_blank" rel="noopener noreferrer">Wikipedia</a></p>
+          {coverageLabel && <p className="app-footer-meta">{coverageLabel}</p>}
+        </footer>
+      </div>
+    )
+  }
+
+  if (!titanStats) {
+    return (
+      <div className="app">
+        <div className="titan-detail-container titan-detail-container--error">
+          <nav className="titan-detail-sticky-nav titan-detail-sticky-nav--static" aria-label="Breadcrumb">
+            <ol className="titan-breadcrumbs">
+              <li><Link to="/">Overview</Link></li>
+              <li aria-current="page">Not found</li>
+            </ol>
+          </nav>
+          <div className="titan-detail-error">
+            <h2>Titan not found</h2>
+            <Link to="/">← Back to Overview</Link>
+          </div>
+        </div>
+
+        <footer className="app-footer">
+          <p>Data sourced from <a href="https://en.wikipedia.org/wiki/Bobby's_Triple_Threat" target="_blank" rel="noopener noreferrer">Wikipedia</a></p>
+          {coverageLabel && <p className="app-footer-meta">{coverageLabel}</p>}
+        </footer>
       </div>
     )
   }
@@ -106,6 +131,12 @@ function TitanDetail({ episodes, filters, handleFilterChange }) {
           <Filters episodes={episodes} onFilterChange={handleFilterChange} />
         </aside>
         <div className="app-content">
+          <nav className="titan-detail-sticky-nav" aria-label="Breadcrumb">
+            <ol className="titan-breadcrumbs">
+              <li><Link to="/">Overview</Link></li>
+              <li aria-current="page">{decodedTitanName}</li>
+            </ol>
+          </nav>
           <div className="titan-detail-container">
             <div className="titan-detail-stats">
         <div className="titan-detail-stat-grid">
@@ -292,6 +323,7 @@ function TitanDetail({ episodes, filters, handleFilterChange }) {
       
       <footer className="app-footer">
         <p>Data sourced from <a href="https://en.wikipedia.org/wiki/Bobby's_Triple_Threat" target="_blank" rel="noopener noreferrer">Wikipedia</a></p>
+        {coverageLabel && <p className="app-footer-meta">{coverageLabel}</p>}
       </footer>
     </div>
   )

@@ -17,7 +17,7 @@
 .stat-card-number-label {
   font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
-  color: #c9a961;
+  color: #dcc48a;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 0.5rem;
@@ -93,7 +93,7 @@
 }
 
 .stat-card-number-neutral .stat-card-number-subtitle {
-  color: #c9a961;
+  color: #dcc48a;
 }
 
 .stat-card-highlight {

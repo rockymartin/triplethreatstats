@@ -4,6 +4,7 @@ import TitanStats from './components/TitanStats'
 import Overview from './components/Overview'
 import Filters from './components/Filters'
 import TitanDetail from './components/TitanDetail'
+import { getDataCoverageLabel } from './utils/dataCoverage'
 import './App.css'
 
 function HomePage({ episodes, filters, handleFilterChange }) {
@@ -19,6 +20,8 @@ function HomePage({ episodes, filters, handleFilterChange }) {
     })
   }, [episodes, filters])
 
+  const coverageLabel = getDataCoverageLabel(episodes)
+
   return (
     <>
       <header className="app-header">
@@ -26,6 +29,19 @@ function HomePage({ episodes, filters, handleFilterChange }) {
         <p>Analyzing performance data from all episodes</p>
         <p className="app-header-subheader">Click any Titan name to view their personal dashboard</p>
       </header>
+
+      {filteredEpisodes.length > 0 && (
+        <nav className="page-subnav" aria-label="On this page">
+          <div className="page-subnav-inner">
+            <a href="#overview">Overview</a>
+            <a href="#section-win-rate">Win rate</a>
+            <a href="#section-margin">Avg margin</a>
+            <a href="#section-round-freq">Round frequency</a>
+            <a href="#section-round-winrate">Wins by round</a>
+            <a href="#section-detail-table">Full table</a>
+          </div>
+        </nav>
+      )}
       
       <main className="app-main">
         <aside className="filters-sidebar">
@@ -47,6 +63,7 @@ function HomePage({ episodes, filters, handleFilterChange }) {
       
       <footer className="app-footer">
         <p>Data sourced from <a href="https://en.wikipedia.org/wiki/Bobby's_Triple_Threat" target="_blank" rel="noopener noreferrer">Wikipedia</a></p>
+        {coverageLabel && <p className="app-footer-meta">{coverageLabel}</p>}
       </footer>
     </>
   )
